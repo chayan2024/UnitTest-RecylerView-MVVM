@@ -14,5 +14,10 @@ class ItemViewModel : ViewModel() {
         // Initialize the list with some dummy data
         _items.value = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
     }
+    fun addItem(item: String) {
+        val currentList = _items.value?.toMutableList() ?: mutableListOf()
+        currentList.add(item)
+        _items.value = currentList
+    }
 }
 
